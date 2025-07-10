@@ -1,0 +1,168 @@
+:root {
+  --bg: #e9ecf0;
+  --glass-bg: rgba(255,255,255,0.3);
+  --glass-border: rgba(255,255,255,0.4);
+  --accent: #007bff;
+  --radius: 10px;
+  --font: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: var(--font);
+  color: #333;
+}
+
+.container {
+  max-width: 100%;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.controls.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.model-area {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.model-block {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.model-block select {
+  height: 40px;
+  padding: 6px;
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+}
+
+#addModelBtn, #generateReport {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.toggle-row {
+  display: flex;
+  gap: 20px;
+}
+
+#reportOutput {
+  margin-top: 30px;
+}
+
+.metric-grid, .canvas-row, .report-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 33.33%);
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.metric-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  padding: 12px;
+  min-width: 300px;
+}
+
+.metric-column h4 {
+  margin-bottom: 10px;
+}
+
+canvas {
+  width: 100%;
+  max-height: 250px;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.report-table th, .report-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+.report-table th {
+  background: #f9f9f9;
+}
+.canvas-row canvas {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+}
+
+.metric-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  padding: 12px;
+  min-width: 300px;
+  max-width: 300px; /* NEW */
+  flex: 0 0 auto;    /* Prevent squishing */
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  max-width: 300px;   /* NEW */
+  min-width: 300px;   /* NEW */
+}
+
+.metric-grid,
+.canvas-row,
+.report-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 300px;     /* FIXED WIDTH */
+  overflow-x: auto;
+  gap: 100px;
+  margin-top: 20px;
+  padding-bottom: 10px;
+}
+
+.delete-model {
+  padding: 6px 10px;
+  background: #dc3545;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  margin-left: 10px;
+}
